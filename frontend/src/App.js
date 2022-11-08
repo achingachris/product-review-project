@@ -1,9 +1,9 @@
 import React from "react";
-import {Routes, Routes} from 'react-router-dom';
-import Home from "../Components/Home";
-import Navbar from "../Components/Navbar";
-import Product from "../Components/Product";
-import Review from "../Components/Review";
+import {Routes, Route} from 'react-router-dom';
+import Home from "./Components/Home";
+import Navbar from "./Components/Navbar";
+import Product from "./Components/Product";
+import Review from "./Components/Review";
 
 
 function App(){
@@ -18,3 +18,5 @@ function App(){
     </div>
   )
 }
+
+export default App;
