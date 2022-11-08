@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
 
     #update
     patch '/products/:id' do
-        product.update(id: params 
+        product.update(params[:id] 
        description: params[:description])
        product.to_json
     end
