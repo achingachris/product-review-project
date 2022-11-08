@@ -7,15 +7,25 @@ class ApplicationController < Sinatra::Base
         product.to_json
     end
 
-    get '/product/:id' do
+    get '/products/:id' do
         product = Product.find(params[:id])
         product.to_json(include: :reviews)
     end
 
     # Post and Patch 
-
-    post '/product/:id' do
-        
+    #create
+    post '/products/:id' do
+       product = Product.create(
+        name: params[:name], description: params[:description]
+       ) product.to_json
     end
+
+    #update
+    patch '/products/:id' do
+        product.update(id: params 
+       description: params[:description])
+       product.to_json
+    end
+
 
 end
