@@ -32,7 +32,19 @@ class ApplicationController < Sinatra::Base
         reviews = Review.all
         reviews.to_json
     end
-    
 
+
+    #--USERS--#
+    post '/users' do 
+        user = User.create( 
+            name: params[:name]
+            contact: params[:contact]
+            email: params[:email]      
+        )
+    end
+
+    # t.string "name"
+    # t.string "contact"
+    # t.string "email"
 
 end
