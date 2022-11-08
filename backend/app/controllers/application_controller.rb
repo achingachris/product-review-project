@@ -27,5 +27,12 @@ class ApplicationController < Sinatra::Base
        product.to_json
     end
 
+    #---REVIEWS--#
+    get '/reviews' do
+        reviews = Review.all
+        reviews.to_json
+    end
+    
+
 
 end
