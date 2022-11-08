@@ -10,7 +10,15 @@ users = [
     {name: 'Angela Mwaniki', contact: 0707000000, email: 'angela@mail.com'},
     {name: 'Jerry Johns', contact: 0707000000, email: 'jerry@mail.com'}
   ]
+
+  Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
   
+#   t.string "comment"
+#   t.integer "user_id"
+#   t.integer "product_id"
+#   t.datetime "created_at"
+#   t.datetime "updated_at"
+
   users.each do |u|
     User.create(u)
   end
