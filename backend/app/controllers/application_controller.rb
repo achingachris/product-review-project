@@ -1,5 +1,21 @@
 class ApplicationController < Sinatra::Base
-    get '/' do # this is the root route of the application (the homepage) but you can have as many routes as you want
-        {hello: "Just a starting code 😃"}.to_json
+
+    set :default_content_type, 'application/json'
+
+    get '/products' do
+        product = Product.all
+        product.to_json
     end
+
+    get '/product/:id' do
+        product = Product.find(params[:id])
+        product.to_json(include: :reviews)
+    end
+
+    # Post and Patch 
+
+    post '/product/:id' do
+        
+    end
+
 end
