@@ -16,13 +16,13 @@ class ApplicationController < Sinatra::Base
     #create
     post '/products/:id' do
        product = Product.create(
-        name: params[:name], description: params[:description]
-       ) product.to_json
+        name: params[:name], description: params[:description])
+         product.to_json
     end
 
     #update
     patch '/products/:id' do
-        product.update(params[:id] 
+        product.update(params[:id], 
        description: params[:description])
        product.to_json
     end
@@ -37,10 +37,10 @@ class ApplicationController < Sinatra::Base
     #--USERS--#
     post '/users' do 
         user = User.create( 
-            name: params[:name]
-            contact: params[:contact]
-            email: params[:email]      
-        )
+            name: params[:name],
+            contact: params[:contact],
+            email: params[:email])
+        user.to_json
     end
 
     # t.string "name"
