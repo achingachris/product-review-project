@@ -11,7 +11,18 @@ users = [
     {name: 'Jerry Johns', contact: 0707000000, email: 'jerry@mail.com'}
   ]
 
-  Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
+  Product.create(product_name: "Iphone 13", description: "It's OK", manufacturer:"Apple", product_image:"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-01.jpg")
+
+#   t.string :product_name
+#   t.string :description
+#   t.string :manufacturer
+#   t.datetime :date_created
+#   t.datetime :updated_at
+#   t.string :product_image
+
+  Review.create(comment: Faker::Lorem, user_id: 2, product_id: 1)
+  #Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
+
   
 #   t.string "comment"
 #   t.integer "user_id"
