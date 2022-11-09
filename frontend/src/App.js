@@ -5,7 +5,7 @@ import './App.css'
 import Layout from './layout/Layout'
 
 import Home from './pages/Home'
-import Product from './Components/Product'
+import Product from './pages/Product'
 import Review from './Components/Review'
 
 function App() {
