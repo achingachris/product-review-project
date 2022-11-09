@@ -1,7 +1,7 @@
 import React from "react";
 import {Routes, Route} from 'react-router-dom';
 import Home from "./Components/Home";
-import Navbar from "./Components/Navbar";
+import NavBar from "./Components/NavBar";
 import Product from "./Components/Product";
 import Review from "./Components/Review";
 
@@ -9,7 +9,7 @@ import Review from "./Components/Review";
 function App(){
   return(
     <div classname="7">
-      <Navbar />
+      <NavBar />
       <Routes>
         <Route exact path='/' element={<Home/>}></Route>
         <Route exact path='/product'element={<Product/>} />
