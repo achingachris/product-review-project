@@ -10,6 +10,11 @@ class ApplicationController < Sinatra::Base
 
     get '/products/:id' do
         product = Product.find(params[:id])
+        product.to_json
+    end
+
+    get '/products/:id' do
+        product = Product.find(params[:id])
         product.to_json(include: :reviews)
     end
 
@@ -83,6 +88,11 @@ class ApplicationController < Sinatra::Base
 
     get '/users' do
         user = User.all
+        user.to_json
+    end
+
+    get '/users/:id' do
+         user = User.find(params[:id])
         user.to_json
     end
 
