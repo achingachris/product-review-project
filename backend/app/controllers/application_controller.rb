@@ -10,6 +10,11 @@ class ApplicationController < Sinatra::Base
 
     get '/products/:id' do
         product = Product.find(params[:id])
+        product.to_json
+    end
+
+    get '/products/:id' do
+        product = Product.find(params[:id])
         product.to_json(include: :reviews)
     end
 
@@ -22,53 +27,71 @@ class ApplicationController < Sinatra::Base
 
     #update
     patch '/products/:id' do
-        product.update(params[:id], 
+        product = Product.update(params[:id], 
        description: params[:description])
        product.to_json
     end
 
+    #delete
+    delete '/products/:id' do 
+        product = Product.find(params[:id])
+        product.destroy
+        product.to_json
+    end
+    #---PRODUCTS END--#
+
 
 
     #---REVIEWS--#
+
     get '/reviews' do
         reviews = Review.all
         reviews.to_json
     end
 
+    get '/reviews/:id' do
+        reviews = Review.find(params[:id])
+        reviews.to_json
+    end
+
     # create reviews
     post '/reviews' do
-        reviews = Review.create(
+        review = Review.create(
+            comment: params[:comment],
+            user_id: params[:user_id],
+            product_id: params[:product_id]
           )
-          reviews.to_json
+          review.to_json
     end
 
     #update reviews
     patch '/reviews/:id' do 
-        reviews = Review.find(params[:id])
-        reviews.update(
+        review = Review.find(params[:id])
+        review.update(
             comment: params[:comment]
-            
         )
+        review.to_json
     end
-
-    # t.string "comment"
-    # t.integer "user_id"
-    # t.integer "product_id"
-    # t.datetime "created_at"
-    # t.datetime "updated_at"
 
     #delete reviews
     delete "/reviews/:id" do 
-        reviews = Review.find(params[:id])
-        reviews.destroy
-        reviews.to_json
+        review = Review.find(params[:id])
+        review.destroy
+        review.to_json
     end
+
+    #---REVIEW END--#
 
 
     #--USERS--#
 
     get '/users' do
         user = User.all
+        user.to_json
+    end
+
+    get '/users/:id' do
+         user = User.find(params[:id])
         user.to_json
     end
 
@@ -80,5 +103,8 @@ class ApplicationController < Sinatra::Base
         user.to_json
     end
 
+    # t.string "name"
+    # t.string "contact"
+    # t.string "email"
   
 end
