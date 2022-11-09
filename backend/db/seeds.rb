@@ -11,7 +11,7 @@ users = [
     {name: 'Jerry Johns', contact: 0707000000, email: 'jerry@mail.com'}
   ]
 
-  Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
+  #Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
   
 #   t.string "comment"
 #   t.integer "user_id"
