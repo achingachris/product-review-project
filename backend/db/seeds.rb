@@ -31,7 +31,9 @@ users = [
     User.create(u)
   end
 
-
+    products.each do|p|
+      Product.create(p)
+    end
 #   create_table :users do |t|
 #     t.string :name 
 #     t.string :contact
