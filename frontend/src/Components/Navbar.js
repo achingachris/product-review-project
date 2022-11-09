@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
-
+import SearchBar from "./SearchBar";
 function Navbar(){
     return(
         <div className="container-fluid">
@@ -10,7 +10,7 @@ function Navbar(){
                 <NavLink to='/'>Home</NavLink>                
                <NavLink to= '/Product'>Product</NavLink>
                <NavLink to= '/review'>Review</NavLink>
-                          
+                 <SearchBar />         
             </div>
         </div>
     )
