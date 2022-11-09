@@ -10,7 +10,7 @@ users = [
     {name: 'Angela Mwaniki', contact: 0707000000, email: 'angela@mail.com'},
     {name: 'Jerry Johns', contact: 0707000000, email: 'jerry@mail.com'}
   ]
-  products=[
+  products = [
     {product_name: "iPhone 14 Plus 512GB", description: faker::lorem, manufacturer: "Apple", product_image: "https://gadgetsleo.com/product/iphone-14-plus-512gb/"}
     {product_name: "Nokia G11 Plus", description: faker::lorem, manufacturer: "Nokia", product_image: "https://gadgetsleo.com/product/nokia-g11-plus/"}
     {product_name: "Infinix Zero Ultra 5G", description: faker::lorem, manufacturer: "Infinix", product_image: "https://gadgetsleo.com/product/infinix-zero-ultra-5g/"}
