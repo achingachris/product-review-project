@@ -5,11 +5,7 @@ const ProductCard = ({ product }) => {
     <div className='col mb-5'>
       <div className='card h-100'>
         {/* Product image*/}
-        <img
-          className='card-img-top'
-          src={product.product_image}
-          alt='...'
-        />
+        <img className='card-img-top' src={product.product_image} alt='...' />
         {/* Product details*/}
         <div className='card-body p-4'>
           <div className='text-center'>
@@ -21,7 +17,10 @@ const ProductCard = ({ product }) => {
         {/* Product actions*/}
         <div className='card-footer p-4 pt-0 border-top-0 bg-transparent'>
           <div className='text-center'>
-            <NavLink className='btn btn-outline-dark mt-auto' to='/product'>
+            <NavLink
+              className='btn btn-outline-dark mt-auto'
+              to={`/product/${product.id}`}
+            >
               View Product
             </NavLink>
           </div>
