@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 const ProductCard = () => {
   return (
     <div className='col mb-5'>
@@ -21,7 +23,8 @@ const ProductCard = () => {
         <div className='card-footer p-4 pt-0 border-top-0 bg-transparent'>
           <div className='text-center'>
             <a className='btn btn-outline-dark mt-auto' href='#'>
-              Review
+            <Link to="/reviews"> Review </Link>
+              
             </a>
           </div>
         </div>
