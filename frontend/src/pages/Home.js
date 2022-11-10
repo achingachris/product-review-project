@@ -1,10 +1,11 @@
+import React from 'react'
 import Header from '../Components/home/Header'
 import ProductList from '../Components/ProductList'
 
 const Home = () => {
   return (
     <>
-      <Header />
+    <Header />
       <ProductList />
     </>
   )
