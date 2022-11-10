@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
+import axios from 'axios'
 
 const ProductList = () => {
   const [products, setProducts] = useState([])
+  
   // get all products
   useEffect(() => {
-    fetch(`http://localhost:8000/products`)
-      .then((resp) => resp.json())
-      .then((products) => setProducts(products))
+    const fetchProducts = async () => {
+      const { data } = await axios.get('/products')
+      setProducts(data)
+    }
+    fetchProducts()
   }, [])
 
   return (
