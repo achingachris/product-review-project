@@ -10,7 +10,8 @@ users = [
     {name: 'Angela Mwaniki', contact: 0707000000, email: 'angela@mail.com'},
     {name: 'Jerry Johns', contact: 0707000000, email: 'jerry@mail.com'}
   ]
-  products = [
+
+products = [
     {product_name: "iPhone 14 Plus 512GB", description: Faker::Lorem, manufacturer: "Apple", product_image: "https://gadgetsleo.com/product/iphone-14-plus-512gb/"},
     {product_name: "Nokia G11 Plus", description: Faker::Lorem, manufacturer: "Nokia", product_image: "https://gadgetsleo.com/product/nokia-g11-plus/"},
     {product_name: "Infinix Zero Ultra 5G", description: Faker::Lorem, manufacturer: "Infinix", product_image: "https://gadgetsleo.com/product/infinix-zero-ultra-5g/"},
@@ -20,6 +21,18 @@ users = [
   ]
   
   Review.create(comment: Faker::Lorem, user_id: 4, product_id: 3)
+
+  Product.create(product_name: "Iphone 13", description: "It's OK", manufacturer:"Apple", product_image:"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-01.jpg")
+
+#   t.string :product_name
+#   t.string :description
+#   t.string :manufacturer
+#   t.datetime :date_created
+#   t.datetime :updated_at
+#   t.string :product_image
+
+  Review.create(comment: Faker::Lorem, user_id: 2, product_id: 1)
+  #Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
   
 #   t.string "comment"
 #   t.integer "user_id"

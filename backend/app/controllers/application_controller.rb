@@ -32,6 +32,12 @@ class ApplicationController < Sinatra::Base
        product.to_json
     end
 
+    #delete
+    delete '/products/:id' do 
+        product = Product.find(params[:id])
+        product.destroy
+        product.to_json
+    end
     #---PRODUCTS END--#
 
 
@@ -50,26 +56,19 @@ class ApplicationController < Sinatra::Base
 
     # create reviews
     post '/reviews' do
-        reviews = Review.create(
+        review = Review.create(
             comment: params[:comment],
             user_id: params[:user_id],
             product_id: params[:product_id]
           )
-          reviews.to_json
+          review.to_json
     end
-
-    # t.string "comment"
-    # t.integer "user_id"
-    # t.integer "product_id"
-    # t.datetime "created_at"
-    # t.datetime "updated_at"
 
     #update reviews
     patch '/reviews/:id' do 
         review = Review.find(params[:id])
         review.update(
             comment: params[:comment]
-
         )
         review.to_json
     end
