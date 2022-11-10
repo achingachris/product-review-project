@@ -8,7 +8,6 @@ const [password, setPassword] = useState('');
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
 
-
 const handleName = (e) => {
 setName(e.target.value);
 setSubmitted(false);
@@ -18,6 +17,7 @@ const handleEmail = (e) => {
 setEmail(e.target.value);
 setSubmitted(false);
 };
+
 
 const handlePassword = (e) => {
 setPassword(e.target.value);
@@ -70,6 +70,7 @@ return (
 </div>
 
 <form>
+
 <label className="label">Name</label>
 <input onChange={handleName} className="input"
 value={name} type="text" />
@@ -88,4 +89,3 @@ Submit
 </form>
 </div>
 );
-export default Form
