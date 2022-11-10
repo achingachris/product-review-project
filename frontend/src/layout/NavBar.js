@@ -26,11 +26,6 @@ function NavBar() {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='navbar-brand' to='/products'>
-                Products
-              </NavLink>
-            </li>
-            <li className='nav-item'>
               <NavLink className='navbar-brand' to='/reviews'>
                 Review
               </NavLink>

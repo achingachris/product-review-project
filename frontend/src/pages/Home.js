@@ -1,5 +1,5 @@
 import Header from '../Components/home/Header'
-import ProductList from '../Components/ProductList'
+import ProductList from '../Components/home/ProductList'
 
 const Home = () => {
   return (

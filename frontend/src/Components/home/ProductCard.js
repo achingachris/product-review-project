@@ -1,22 +1,21 @@
 import { NavLink } from 'react-router-dom'
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   return (
     <div className='col mb-5'>
       <div className='card h-100'>
         {/* Product image*/}
         <img
           className='card-img-top'
-          src='https://dummyimage.com/450x300/dee2e6/6c757d.jpg'
+          src={product.product_image}
           alt='...'
         />
         {/* Product details*/}
         <div className='card-body p-4'>
           <div className='text-center'>
             {/* Product name*/}
-            <h5 className='fw-bolder'>Fancy Product</h5>
-            {/* Product price*/}
-            $40.00 - $80.00
+            <h5 className='fw-bolder'>{product.product_name}</h5>
+            <p className='text-muted'>{product.description}</p>
           </div>
         </div>
         {/* Product actions*/}
