@@ -13,13 +13,10 @@ const Header = () => {
               </p>
               <div className='d-grid gap-3 d-sm-flex justify-content-sm-center'>
                 <a
-                  className='btn btn-primary btn-lg px-4 me-sm-3'
-                  href='#features'
+                  className='btn btn-outline-light btn-lg px-4'
+                  href='https://github.com/achingachris/product-review-project/'
                 >
-                  Products
-                </a>
-                <a className='btn btn-outline-light btn-lg px-4' href='#!'>
-                  Avaliable Reviews
+                  GitHub
                 </a>
               </div>
             </div>
