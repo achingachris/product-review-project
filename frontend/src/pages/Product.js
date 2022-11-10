@@ -1,4 +1,3 @@
-import ProductList from '../Components/ProductList'
 
 const Product = () => {
   return (
@@ -13,7 +12,6 @@ const Product = () => {
           </div>
         </div>
       </header>
-      <ProductList />
     </>
   )
 }
