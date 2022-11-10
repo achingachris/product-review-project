@@ -12,17 +12,17 @@ users = [
   ]
 
 products = [
-    {product_name: "iPhone 14 Plus 512GB", description: Faker::Lorem, manufacturer: "Apple", product_image: "https://gadgetsleo.com/product/iphone-14-plus-512gb/"},
-    {product_name: "Nokia G11 Plus", description: Faker::Lorem, manufacturer: "Nokia", product_image: "https://gadgetsleo.com/product/nokia-g11-plus/"},
-    {product_name: "Infinix Zero Ultra 5G", description: Faker::Lorem, manufacturer: "Infinix", product_image: "https://gadgetsleo.com/product/infinix-zero-ultra-5g/"},
-    {product_name: "Tecno Spark 9 Pro Sports Edition", description: Faker::Lorem, manufacturer: "Techno", product_image: "https://gadgetsleo.com/product/tecno-spark-9-pro-sports-edition/"},
-    {product_name: "Samsung Galaxy M23 5G", description: Faker::Lorem, manufacturer: "Samsung", product_image: "https://gadgetsleo.com/product/samsung-galaxy-m23/"},
-    {product_name: "Oppo Reno 8 4G", description: Faker::Lorem, manufacturer: "Oppo", product_image: "https://gadgetsleo.com/product/oppo-reno-8-4g/"}
+    {product_name: "iPhone 14 Plus 512GB", description: "It is a good product", manufacturer: "Apple", product_image: "https://gadgetsleo.com/product/iphone-14-plus-512gb/"},
+    {product_name: "Nokia G11 Plus", description: "It is a good product", manufacturer: "Nokia", product_image: "https://gadgetsleo.com/product/nokia-g11-plus/"},
+    {product_name: "Infinix Zero Ultra 5G", description: "It is a good product", manufacturer: "Infinix", product_image: "https://gadgetsleo.com/product/infinix-zero-ultra-5g/"},
+    {product_name: "Tecno Spark 9 Pro Sports Edition", description: "It is a good product", manufacturer: "Techno", product_image: "https://gadgetsleo.com/product/tecno-spark-9-pro-sports-edition/"},
+    {product_name: "Samsung Galaxy M23 5G", description: "It is a good product", manufacturer: "Samsung", product_image: "https://gadgetsleo.com/product/samsung-galaxy-m23/"},
+    {product_name: "Oppo Reno 8 4G", description: "It is a good product", manufacturer: "Oppo", product_image: "https://gadgetsleo.com/product/oppo-reno-8-4g/"}
   ]
   
-  Review.create(comment: Faker::Lorem, user_id: 4, product_id: 3)
+  Review.create(comment: "it a comment", user_id: 4, product_id: 3)
 
-  Product.create(product_name: "Iphone 13", description: "It's OK", manufacturer:"Apple", product_image:"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-01.jpg")
+  # Product.create(product_name: "Iphone 13", description: "It's OK", manufacturer:"Apple", product_image:"https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-01.jpg")
 
 #   t.string :product_name
 #   t.string :description
@@ -31,7 +31,7 @@ products = [
 #   t.datetime :updated_at
 #   t.string :product_image
 
-  Review.create(comment: Faker::Lorem, user_id: 2, product_id: 1)
+  Review.create(comment: "another comment", user_id: 2, product_id: 1)
   #Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
   
 #   t.string "comment"
