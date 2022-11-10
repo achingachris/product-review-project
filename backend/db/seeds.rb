@@ -32,6 +32,7 @@ products = [
 #   t.string :product_image
 
   Review.create(comment: "The phone is awesome", user_id: 2, product_id: 1)
+
   #Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
   
 #   t.string "comment"
