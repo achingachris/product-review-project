@@ -20,8 +20,8 @@ users = [
 #   t.datetime :updated_at
 #   t.string :product_image
 
-  Review.create(comment: Faker::Lorem, user_id: 2, product_id: 1)
-  #Review.create(comment: Faker::Lorem, user_id: user.id, product_id: product.id)
+  Review.create(comment: "It was average", user_id: 2, product_id: 1)
+  Review.create(comment: "It was OK", user_id: 4, product_id: 3)
 
   
 #   t.string "comment"
@@ -29,6 +29,8 @@ users = [
 #   t.integer "product_id"
 #   t.datetime "created_at"
 #   t.datetime "updated_at"
+
+
 
   users.each do |u|
     User.create(u)
