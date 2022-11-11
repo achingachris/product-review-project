@@ -28,5 +28,24 @@ class ApplicationController < Sinatra::Base
         mechanic.to_json
       end
 
+      #PATCH
+      patch '/products/:id' do
+        product = Product.find(params[:id])
+        product.update(
+          product_name: params[:product_name],
+          description: params[:description],
+          manufacturer: params[:manufacturer],
+          product_image: params[:product_image]
+        )
+        product.to_json
+      end
+
+      #DELETE
+      delete '/products/:id' do
+        product = Product.find(params[:id])
+        product.delete
+        product.to_json
+      end
+
 
 end
