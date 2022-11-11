@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const Product = () => {
   const [product, setProduct] = useState({})
-  const [review, setReview] = useState('')
+  // const [review, setReview] = useState('')
 
   const { id } = useParams()
   // get product by id
@@ -16,14 +16,7 @@ const Product = () => {
     fetchProduct()
   }, [])
 
-  // get product review
-  useEffect(() => {
-    const fetchReview = async () => {
-      const { data } = await axios.get(`/reviews/${id}`)
-      setReview(data)
-    }
-    fetchReview()
-  }, [])
+  // console.log(product.reviews)
 
   return (
     <>
@@ -61,16 +54,12 @@ const Product = () => {
       {/* reviews section */}
       <section className='py-5'>
         <div className='container px-4 px-lg-5 mt-5'>
-            <h1>Reviews</h1>
-          <div className='row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center'>
-            <br />
-            <div className='col mb-5'>
-              <div className='card h-100'>
-                <div className='card-body p-4'>
-                  <div className='text-center'>
-                    <p className='text-muted'>{review.comment}</p>
-                  </div>
-                </div>
+          <h1 className='text-center'>Available Reviews</h1>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-md-7'>
+                <h3>Chris Achinga</h3>
+                <p>It is a good phone</p>
               </div>
             </div>
           </div>
