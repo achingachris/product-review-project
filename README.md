@@ -4,6 +4,8 @@
 
 [Backend](./backend/)
 
+![image](./image.png)
+
 ## Running The Project:
 
 ### Starting the Server
