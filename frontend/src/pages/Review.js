@@ -5,6 +5,9 @@ const Review = () => {
   const [reviews, setReviews] = useState([])
   const [users, setUsers] = useState([])
 
+  // form states
+  const [reviewComment, setReviewComment] = useState('A sample Comment')
+
   // get all reviews
   useEffect(() => {
     const fetchReviews = async () => {
@@ -22,6 +25,12 @@ const Review = () => {
     }
     fetchUsers()
   }, [])
+
+  // handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log('submitted')
+  }
 
   return (
     <>
@@ -50,7 +59,7 @@ const Review = () => {
         <div className='row'>
           <div className='col-md-7'>
             <h3>Add a review</h3>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className='form-group'>
                 <label htmlFor='comment'>Select User</label>
 
@@ -71,6 +80,7 @@ const Review = () => {
                 <textarea
                   className='form-control'
                   id='comment'
+                  value={reviewComment}
                   rows='3'
                   placeholder='Enter your comment'
                 ></textarea>

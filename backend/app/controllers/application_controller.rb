@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 
       get '/products/:id' do
         product = Product.find(params[:id])
-        product.to_json
+        product.to_json(include: :reviews)
       end
 
       get '/products/:id' do
@@ -47,12 +47,12 @@ class ApplicationController < Sinatra::Base
 
       get '/reviews' do
         reviews = Review.all
-        reviews.to_json
+        reviews.to_json(include: :user)
       end
 
       get '/reviews/:id' do
         reviews = Review.find(params[:id])
-        reviews.to_json
+        reviews.to_json(include: :user)
       end
 
 
