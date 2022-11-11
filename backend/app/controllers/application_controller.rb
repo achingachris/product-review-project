@@ -1,110 +1,96 @@
 class ApplicationController < Sinatra::Base
+    set :default_content_type, "application/json"
 
-    set :default_content_type, 'application/json'
-
-    #PRODUCTS
     get '/products' do
         product = Product.all
-        product.to_json
-    end
+        product.to_json(include: :reviews)
+      end
 
-    get '/products/:id' do
+      get '/products/:id' do
         product = Product.find(params[:id])
         product.to_json
-    end
+      end
 
-    get '/products/:id' do
+      get '/products/:id' do
         product = Product.find(params[:id])
         product.to_json(include: :reviews)
-    end
+      end 
+  
+      post '/products' do
+        product = Product.create(
+          product_name: params[:product_name],
+          description: params[:description],
+          manufacturer: params[:manufacturer],
+          product_image: params[:product_image]
+        )
+        mechanic.to_json
+      end
 
-    #create
-    post '/products/:id' do
-       product = Product.create(
-        name: params[:name], description: params[:description])
-         product.to_json
-    end
-
-    #update
-    patch '/products/:id' do
-        product = Product.update(params[:id], 
-       description: params[:description])
-       product.to_json
-    end
-
-    #delete
-    delete '/products/:id' do 
+      patch '/products/:id' do
         product = Product.find(params[:id])
-        product.destroy
+        product.update(
+          product_name: params[:product_name],
+          description: params[:description],
+          manufacturer: params[:manufacturer],
+          product_image: params[:product_image]
+        )
         product.to_json
-    end
-    #---PRODUCTS END--#
+      end
 
+      delete '/products/:id' do
+        product = Product.find(params[:id])
+        product.delete
+        product.to_json
+      end
 
+      #---REVIEWS---#
 
-    #---REVIEWS--#
-
-    get '/reviews' do
+      get '/reviews' do
         reviews = Review.all
         reviews.to_json
-    end
+      end
 
-    get '/reviews/:id' do
+      get '/reviews/:id' do
         reviews = Review.find(params[:id])
         reviews.to_json
-    end
+      end
 
-    # create reviews
-    post '/reviews' do
+
+       post '/reviews' do
         review = Review.create(
-            comment: params[:comment],
-            user_id: params[:user_id],
-            product_id: params[:product_id]
-          )
-          review.to_json
+        comment: params[:comment],
+        user_id: params[:user_id],
+        product_id: params[:product_id]
+      )
+       review.to_json
     end
 
-    #update reviews
-    patch '/reviews/:id' do 
+    patch '/reviews/:id' do
         review = Review.find(params[:id])
         review.update(
-            comment: params[:comment]
+          comment: params[:comment]
         )
         review.to_json
-    end
+      end
 
-    #delete reviews
-    delete "/reviews/:id" do 
+      delete '/reviews/:id' do
         review = Review.find(params[:id])
-        review.destroy
+        review.delete
         review.to_json
-    end
+      end
 
-    #---REVIEW END--#
+    
 
-
-    #--USERS--#
-
-    get '/users' do
-        user = User.all
+    get '/users' do 
+        user = User.all 
         user.to_json
     end
 
     get '/users/:id' do
-         user = User.find(params[:id])
-        user.to_json
-    end
+    user = User.find_by(id: params[:id])
+    product_ids = user.reviews.map { |review| review[:product_id] }
+    products = Product.all.select { |product| product_ids.include?(product.id) }
+    user.to_json
+  end
 
-    post '/users' do 
-        user = User.create( 
-            name: params[:name],
-            contact: params[:contact],
-            email: params[:email])
-        user.to_json
-    end
-
-    # t.string "name"
-    # t.string "contact"
-    # t.string "email"
-  
 end
