@@ -80,34 +80,21 @@ Sinatra API routes that take care of all CRUD operations for Active Record entit
 ``` 
  
  
-### ROUTES
+### ROUTES Methods and Actions
  
-GET
+#### GET
 
-/reviews
- 
-returns all reviews
+`/reviews`: returns all reviews
 
+`/reviews/:id`: returns a specific review
  
-GET
+`/products`: returns all products
 
-/reviews/:id
- 
-returns a specific review
- 
+`/products/:id`: returns a specific product
 
  
-DELETE
-/reviews/:id
- 
-deletes a specific review
-
- 
-GET	/products		returns all products
-GET	/products/:id		returns a specific product
- 
-
-
+#### DELETE
+`/reviews/:id`: deletes a specific review
 
 
 ## Task Assignment:
